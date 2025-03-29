@@ -70,52 +70,11 @@ Bu botu kendi Discord sunucunuzda kullanmaya başlamak için aşağıdaki adıml
 
     **Önemli:** Bot tokeninizi ve sunucu ID'nizi doğru şekilde girdiğinizden emin olun. Bot tokeninizi kimseyle paylaşmayın!
 
-4.  **`aiprocess.py` Dosyasını Uygulayın:**
-
-    Bu dosya, Gemini API ile etkileşim kurarak `config/server_config_ai.json` dosyasını oluşturmaktan sorumludur. Bu dosyanın içeriği, nasıl bir sunucu oluşturmak istediğinize bağlı olarak değişecektir. Örneğin, kullanıcıdan alınan bir metin girdisine göre bir sunucu yapısı oluşturabilirsiniz.
-
-    **Örnek (Basitleştirilmiş):**
-
-    ```python
-    import json
-    # Eğer Gemini API kullanıyorsanız gerekli kütüphaneyi import edin
-    # import google.generativeai as genai
-
-    def generate_template(data):
-        print(f"Gemini API ile sunucu şablonu oluşturuluyor. Veri: {data}")
-        # Burada Gemini API çağrıları ve JSON oluşturma mantığı yer alacak.
-        # Örnek bir statik JSON çıktısı (gerçekte Gemini API tarafından oluşturulmalı):
-        server_config = {
-          "name": f"{data} Topluluğu",
-          "description": f"{data} hakkında bir araya gelen insanlar için harika bir sunucu!",
-          "categories": [
-            {"name": "Sohbet", "channels": ["genel", "tartışmalar"]},
-            {"name": "Sesli", "channels": ["sohbet", "oyun"]}
-          ],
-          "channels": [
-            {"name": "genel", "type": "text", "permissions": [{"role": "@everyone", "intent": ["read_messages", "send_messages"]}]},
-            {"name": "tartışmalar", "type": "text", "permissions": [{"role": "@everyone", "intent": ["read_messages", "send_messages"]}]},
-            {"name": "sohbet", "type": "voice", "permissions": [{"role": "@everyone", "intent": ["connect", "speak"]}]},
-            {"name": "oyun", "type": "voice", "permissions": [{"role": "@everyone", "intent": ["connect", "speak"]}]}
-          ],
-          "roles": [
-            {"name": "Üye", "color": "#00FF00", "permissions": ["send_messages", "read_messages", "attach_files", "connect", "speak"]}
-          ]
-        }
-        with open("config/server_config_ai.json", "w", encoding="utf-8") as f:
-            json.dump(server_config, f, indent=4, ensure_ascii=False)
-        print("Sunucu şablonu oluşturuldu: config/server_config_ai.json")
-
-    if __name__ == '__main__':
-        # Test amaçlı bir veri ile şablon oluşturmayı deneyebilirsiniz.
-        generate_template("Zürafalar")
-    ```
-
-5.  **`config/server_config_ai.json` Dosyası:**
+4.  **`config/server_config_ai.json` Dosyası:**
 
     Bu dosya başlangıçta boş olabilir veya temel bir yapı içerebilir. `!üret` komutu ilk kez çalıştırıldığında, `aiprocess.py` dosyası ve Gemini API aracılığıyla bu dosya dinamik olarak oluşturulacaktır.
 
-6.  **Botu Çalıştırın:**
+5.  **Botu Çalıştırın:**
 
     Ana Python dosyanızı (örneğin `main.py`) çalıştırın:
 
