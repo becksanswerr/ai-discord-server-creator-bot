@@ -1,0 +1,199 @@
+{
+    "name": "🌌 Kozmos Çalışma Köşesi",
+    "icon": "https://example.com/cosmos-icon.png",
+    "channels": [
+        {
+            "name": "⭐-duyurular",
+            "type": "text",
+            "permissions": [
+                {
+                    "role": "@everyone",
+                    "intent": [
+                        "read_messages"
+                    ],
+                    "deny": [
+                        "send_messages"
+                    ]
+                },
+                {
+                    "role": "admin",
+                    "intent": [
+                        "manage_channels",
+                        "send_messages"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "🚀-genel-sohbet",
+            "type": "text",
+            "permissions": [
+                {
+                    "role": "@everyone",
+                    "intent": [
+                        "read_messages",
+                        "send_messages",
+                        "add_reactions"
+                    ]
+                },
+                {
+                    "role": "moderator",
+                    "intent": [
+                        "manage_messages"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "🪐-proje-fikirleri",
+            "type": "text",
+            "permissions": [
+                {
+                    "role": "@everyone",
+                    "intent": [
+                        "read_messages",
+                        "send_messages"
+                    ]
+                },
+                {
+                    "role": "moderator",
+                    "intent": [
+                        "manage_messages"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "🛰️-kaynaklar",
+            "type": "text",
+            "permissions": [
+                {
+                    "role": "@everyone",
+                    "intent": [
+                        "read_messages",
+                        "attach_files"
+                    ]
+                },
+                {
+                    "role": "moderator",
+                    "intent": [
+                        "manage_messages"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "🌙-sessiz-calisma",
+            "type": "voice",
+            "permissions": [
+                {
+                    "role": "@everyone",
+                    "intent": [
+                        "connect"
+                    ]
+                },
+                {
+                    "role": "moderator",
+                    "intent": [
+                        "mute_members",
+                        "deafen_members"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "☀️-ortak-calisma",
+            "type": "voice",
+            "permissions": [
+                {
+                    "role": "@everyone",
+                    "intent": [
+                        "connect",
+                        "speak"
+                    ]
+                },
+                {
+                    "role": "moderator",
+                    "intent": [
+                        "mute_members",
+                        "deafen_members"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "🌟-oylama-ve-anketler",
+            "type": "text",
+            "permissions": [
+                {
+                    "role": "@everyone",
+                    "intent": [
+                        "read_messages",
+                        "send_messages",
+                        "add_reactions"
+                    ]
+                }
+            ]
+        }
+    ],
+    "roles": [
+        {
+            "name": "Admin",
+            "color": "#00FFFF",
+            "permissions": [
+                "manage_server",
+                "kick_members",
+                "ban_members"
+            ]
+        },
+        {
+            "name": "Moderator",
+            "color": "#FFA500",
+            "permissions": [
+                "manage_messages",
+                "mute_members",
+                "deafen_members"
+            ]
+        },
+        {
+            "name": "Yıldız Gezgini",
+            "color": "#8A2BE2",
+            "permissions": [
+                "send_messages",
+                "connect",
+                "add_reactions"
+            ]
+        },
+        {
+            "name": "Yeni Üye",
+            "color": "#D3D3D3",
+            "permissions": [
+                "read_messages"
+            ]
+        }
+    ],
+    "categories": [
+        {
+            "name": "⭐ Genel",
+            "channels": [
+                "⭐-duyurular",
+                "🚀-genel-sohbet",
+                "🌟-oylama-ve-anketler"
+            ]
+        },
+        {
+            "name": "🪐 Projeler",
+            "channels": [
+                "🪐-proje-fikirleri",
+                "🛰️-kaynaklar"
+            ]
+        },
+        {
+            "name": "🌌 Sesli Çalışma",
+            "channels": [
+                "🌙-sessiz-calisma",
+                "☀️-ortak-calisma"
+            ]
+        }
+    ]
+}
