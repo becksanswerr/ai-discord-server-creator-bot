@@ -44,22 +44,8 @@ Bu botu kendi Discord sunucunuzda kullanmaya başlamak için aşağıdaki adıml
     # Örneğin: pip install google-generativeai
     ```
 
-2.  **Proje Dosyalarını Oluşturun:**
 
-    Aşağıdaki dosya ve klasör yapısını oluşturun:
-
-    ```
-    .
-    ├── config/
-    │   └── server_config_ai.json  # Gemini API tarafından oluşturulur
-    ├── logs/
-    │   └── command_log.txt
-    ├── aiprocess.py  # Gemini API ile etkileşim ve JSON oluşturma mantığı burada olmalı
-    ├── TOKENS.py
-    └── ana_dosya_adi.py (örneğin main.py)
-    ```
-
-3.  **`TOKENS.py` Dosyasını Yapılandırın:**
+2.  **`TOKENS.py` Dosyasını Yapılandırın:**
 
     `TOKENS.py` dosyasını oluşturun ve Discord bot tokeninizi ve sunucu ID'nizi aşağıdaki gibi ekleyin:
 
@@ -70,11 +56,11 @@ Bu botu kendi Discord sunucunuzda kullanmaya başlamak için aşağıdaki adıml
 
     **Önemli:** Bot tokeninizi ve sunucu ID'nizi doğru şekilde girdiğinizden emin olun. Bot tokeninizi kimseyle paylaşmayın!
 
-4.  **`config/server_config_ai.json` Dosyası:**
+3.  **`config/server_config_ai.json` Dosyası:**
 
     Bu dosya başlangıçta boş olabilir veya temel bir yapı içerebilir. `!üret` komutu ilk kez çalıştırıldığında, `aiprocess.py` dosyası ve Gemini API aracılığıyla bu dosya dinamik olarak oluşturulacaktır.
 
-5.  **Botu Çalıştırın:**
+4.  **Botu Çalıştırın:**
 
     Ana Python dosyanızı (örneğin `main.py`) çalıştırın:
 
